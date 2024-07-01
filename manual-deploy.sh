@@ -32,10 +32,10 @@ else
 fi
 
 echo "Creating and switching to new branch '$branch_name'..."
-git switch -c $branch_name --track origin/$branch_name
+git switch -c $branch_name #--track origin/$branch_name
 
-#echo "Removing all files in the new branch..."
-#git rm -rf .
+echo "Removing all files in the new branch..."
+git rm -rf .
 
 echo -e "node_modules\ndist/" >> .gitignore
 cp -r dist/* .
