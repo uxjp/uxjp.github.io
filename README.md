@@ -1,1 +1,0 @@
-# uxjp's blog
