@@ -2,7 +2,7 @@ name: Deploy Vite App to GitHub Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ['*']
   workflow_dispatch:
 
 permissions:
@@ -29,16 +29,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'  # Set cache for pnpm
-
-      - name: Install pnpm
-        run: npm install -g pnpm
+          cache: 'npm'  # Set cache for npm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build Vite app
-        run: pnpm run build
+        run: npm run build
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
@@ -51,4 +48,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
