@@ -4,39 +4,34 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+ 
+.what_i_wrote {
+  margin: 45px 0px 0px 0px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social_links a {
+  padding: 5px;
+  margin: 0px 10px;
+  position: relative;
+  color: rgb(175, 139, 210);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.social_links a:hover {
+  background-size: 100% 2px; /* Expand underline to full width */
 }
 
-.card {
-  padding: 2em;
+.skills img {
+  margin: 0px 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.skills img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 20px rgb(175, 139, 210));
 }
