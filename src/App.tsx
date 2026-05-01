@@ -5,9 +5,9 @@ function App() {
     <div className="app-container">
       <h2>Hello, it's JP 🦾</h2>
       <p className='test'>
-        I like to learn new ways to do things and to automate stuff. Trying to
-        do the same thing in a lot of different ways and organize created knowledge... yeah I learn just for the sake of it.  
-        If you have been doing something cool about web dev or DX, contact me.
+        Ideas have to come to life. Features have to be understood. Technical decisions have to use engeneering principles in ther design.
+        
+        Users of your software and design principles are the real proof service.
       </p>
       <div className="social_links">
         <a href="https://x.com/uxxxjp" target="_blank">X</a>
