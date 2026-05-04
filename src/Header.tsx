@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import './Header.css'
 
@@ -7,9 +7,9 @@ function Header() {
   const [open, setOpen] = useState(false)
 
   const posts = [
-    {id: 1, title: "my first post"},
-    {id: 2, title: "my second post"},
-    {id: 3, title: "my third post"}
+    { id: 1, title: "my first post" },
+    { id: 2, title: "my second post" },
+    { id: 3, title: "my third post" }
   ]
 
   return (
@@ -25,11 +25,18 @@ function Header() {
             className="dropdown-container"
             onClick={() => setOpen(!open)}
           >
-
-            <span>Posts</span>
-
-
+            Posts
+            {open && (
+              <div
+                className="dropdown-box"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Hello
+              </div>
+            )}
           </div>
+
+
 
 
         </nav>
