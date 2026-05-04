@@ -44,6 +44,9 @@
 }
 
 .dropdown-box {
+  overflow: hidden;
+  overflow-y: auto;
+
   position: absolute;
   top: 33px;
 
@@ -51,7 +54,7 @@
   margin-top: 10px;
 
   width: 150px;
-  height: 100px;  
+  height: 200px;  
 
   background-color: #282c34;
   border: 1px solid white;
