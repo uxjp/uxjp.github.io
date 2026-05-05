@@ -40,9 +40,15 @@ function Header() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <ul>
-                  {posts.map(
+                  {posts2.map(
                     post => (
-                      <li>Post {post.id} name: {post.title}</li>
+                      <li
+                          onClick={() => setOpen(!open)}
+                      >
+                        <Link to="About">
+                          Post {post.id} name: {post.title}
+                        </Link>
+                      </li>
                     )
                   )
                   }
