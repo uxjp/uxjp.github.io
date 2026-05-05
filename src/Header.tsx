@@ -6,7 +6,15 @@ function Header() {
 
   const [open, setOpen] = useState(false)
 
-  const posts = [
+
+  const posts = [...Array(30).keys()].map(
+      i => ({
+         id: i + 1,
+         title:  `my ${i} th post`
+      })
+  )
+
+  const posts2 = [
     { id: 1, title: "my first post" },
     { id: 2, title: "my second post" },
     { id: 3, title: "my third post" }
@@ -31,30 +39,15 @@ function Header() {
                 className="dropdown-box"
                 onClick={(e) => e.stopPropagation()}
               >
-                <li> hello 1</li>
-                <li> hello 2</li>
-                <li> hello 3</li>
-                <li> hello 4</li>
-                <li> hello 5</li>
-                <li> hello 6</li>
-                <li> hello 7</li>
-                <li> hello 8</li>
-                <li> hello 9</li>
-                <li> hello 10</li>
-                <li> hello 11</li>
-                <li> hello 12</li>
-                <li> hello 1</li>
-                <li> hello 2</li>
-                <li> hello 3</li>
-                <li> hello 4</li>
-                <li> hello 5</li>
-                <li> hello 6</li>
-                <li> hello 7</li>
-                <li> hello 8</li>
-                <li> hello 9</li>
-                <li> hello 10</li>
-                <li> hello 11</li>
-                <li> hello 12</li>
+                <ul>
+                  {posts.map(
+                    post => (
+                      <li>Post {post.id} name: {post.title}</li>
+                    )
+                  )
+                  }
+
+                </ul>
 
               </div>
             )}
