@@ -1,0 +1,9 @@
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    line-height: 1.62;
+    letter-spacing: -0.003em;
+    font-size: 18px;
+    font-weight: 400;
+}
