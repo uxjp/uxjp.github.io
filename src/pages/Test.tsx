@@ -1,7 +1,7 @@
 function Test() {
   return (
     <div className="app-container">
-      <p className='test'>
+      <div className='test'>
         Test Ideas this should be a text for a simple post.
 
         We are now missing some implmentations:  
@@ -15,7 +15,7 @@ function Test() {
 
         <p>- JP Level</p>
         <p>-- Image carousel</p>
-      </p>
+      </div>
     </div>
   );
 }

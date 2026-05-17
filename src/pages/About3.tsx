@@ -1,7 +1,7 @@
-function About() {
+function About3() {
   return (
     <div className="app-container">
-      <h2>Hello, it's JP 🦾</h2>
+      <h2>Post 3Hello, it's JP 🦾</h2>
       <p className='test'>
         Ideas have to come to life. Features have to be understood. 
         Technical decisions have to use engineering principles in their design.
@@ -48,4 +48,4 @@ function About() {
   );
 }
 
-export default About;
+export default About3;

@@ -1,36 +1,45 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect, useRef } from "react"
+import { Link, useLocation } from "react-router-dom"
 import './Header.css'
 
 function Header() {
 
   const [open, setOpen] = useState(false)
-
-
-  const posts = [...Array(30).keys()].map(
-      i => ({
-         id: i + 1,
-         title:  `my ${i} th post`
-      })
-  )
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
+  const location = useLocation()
 
   const posts2 = [
-    { id: 1, title: "my first post" },
-    { id: 2, title: "my second post" },
-    { id: 3, title: "my third post" }
+    { id: 1, title: "my first post", url: "/about"},
+    { id: 2, title: "my second post", url: "/about2"},
+    { id: 3, title: "my third post", url: "/about3" }
   ]
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   return (
     <header className="header__header">
 
       <div className="header__left">
-        <h1>
-          <Link to="/">MyBlog</Link>
-        </h1>
+        <div className="header__title">
+          <Link to="/">How do you think ?</Link>
+        </div>
 
         <nav className="header__nav-left">
           <div
             className="dropdown-container"
+            ref={dropdownRef}
             onClick={() => setOpen(!open)}
           >
             Posts
@@ -39,17 +48,31 @@ function Header() {
                 className="dropdown-box"
                 onClick={(e) => e.stopPropagation()}
               >
-                <ul>
+                <ul
+                  className="dropdown-list"
+                >
                   {posts2.map(
-                    post => (
-                      <li
-                          onClick={() => setOpen(!open)}
-                      >
-                        <Link to="About">
-                          Post {post.id} name: {post.title}
-                        </Link>
-                      </li>
-                    )
+                    post => {
+
+                      const linkPath = post.url
+                      const isActive = location.pathname === linkPath
+
+                      return (
+                        <li
+                            key={post.id}
+                            className="dropdown-item"
+                            onClick={() => setOpen(false)}
+                        >
+                          <Link
+                              to={linkPath}
+                              className={`dropdown-link ${isActive ? 'active' : ''}`}
+                          >
+                            {post.title}
+                          </Link>
+                        </li>
+                      )
+                   }
+
                   )
                   }
 
