@@ -9,9 +9,9 @@ function Header() {
   const location = useLocation()
 
   const posts2 = [
-    { id: 1, title: "my first post", url: "/about"},
-    { id: 2, title: "my second post", url: "/about2"},
-    { id: 3, title: "my third post", url: "/about3" }
+    { id: 1, title: "my first post", url: "/Post1"},
+    { id: 2, title: "my second post", url: "/Post2"},
+    { id: 3, title: "my third post", url: "/Post3" }
   ]
 
   useEffect(() => {
