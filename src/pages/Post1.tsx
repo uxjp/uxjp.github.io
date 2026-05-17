@@ -1,9 +1,14 @@
 import './Post.css'
 
+import imageCaveman from './image_caveman.webp'
+
 function Post1() {
   return (
     <div className="app-container">
-      <h2>Post 1: The Reification</h2>
+      <div className="post-header">
+        <img src={imageCaveman} alt="Caveman illustration" className="post-image" loading="eager" />
+        <h2 className="post-title">Post 1: The Reification</h2>
+      </div>
       
       <p className='test'>
         Les idées doivent prendre vie. Les fonctionnalités doivent être comprises. Les décisions techniques doivent s'appuyer sur des principes d'ingénierie solides dans leur conception.
